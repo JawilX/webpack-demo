@@ -1,6 +1,11 @@
 import _ from 'lodash'
 import './style.css'
 import Icon from './icon.png'
+import Data from './data.xml'
+// 没有警告
+import json from './data.json'
+// 显示警告，规范不允许这样做。
+import { foo } from './data.json'
 
 function component() {
   const element = document.createElement('div')
@@ -14,6 +19,10 @@ function component() {
   myIcon.src = Icon
 
   element.appendChild(myIcon)
+
+  console.log(Data)
+  console.log(json)
+  console.log(foo)
 
   return element
 }
