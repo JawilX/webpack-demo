@@ -208,7 +208,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("function getComponent() {\n  return __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7)).then(({default: _}) => {\n    const element = document.createElement('div')\n\n    // lodash，现在通过一个 script 引入\n    element.innerHTML = _.join(['Hello', 'webpack'], ' ')\n\n    return element\n  }).catch(error => 'An error occurred while loading the component')\n\n}\n\ngetComponent().then(component => {\n  document.body.appendChild(component)\n})\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("async function getComponent() {\n  const element = document.createElement('div')\n  const { default: _ } = await __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7))\n\n  element.innerHTML = _.join(['Hello', 'webpack'], ' ')\n\n  return element\n}\n\ngetComponent().then(component => {\n  document.body.appendChild(component)\n})\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
